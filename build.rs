@@ -77,6 +77,8 @@ impl Display for LinkingOptions {
 }
 
 fn main() {
+    panic!("{}/{}", std::env::current_dir().unwrap().display(), std::env::var("PQ_LIB_DIR").unwrap());
+
     println!("cargo:rerun-if-env-changed=PQ_LIB_STATIC");
     println!("cargo:rerun-if-env-changed=TARGET");
 
